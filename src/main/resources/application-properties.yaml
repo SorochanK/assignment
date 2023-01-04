@@ -2,8 +2,5 @@ server:
   port: 8080
 
 spring:
-  data:
-    mongodb:
-      port: 27017
-      uri: mongodb://localhost/
-      database: assignment
+  application:
+    name: "Assignment for AposHealth project"
