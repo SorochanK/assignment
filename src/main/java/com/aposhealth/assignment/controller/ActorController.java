@@ -5,6 +5,7 @@ import com.aposhealth.assignment.service.ActorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,5 +21,11 @@ public class ActorController {
 	public ResponseEntity<List<Actor>> getAllActorsByJob(@RequestParam final String job) {
 		var actors = actorService.findAllByJob(job);
 		return actors.isEmpty() ? ResponseEntity.notFound().build() : ResponseEntity.ok(actors);
+	}
+
+	@PostMapping("/api/v1/reset")
+	public ResponseEntity<Void> reset() {
+		 actorService.reset();
+		return ResponseEntity.ok().build();
 	}
 }

@@ -6,9 +6,11 @@ import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @AllArgsConstructor
+@Builder
 @Getter
 @Document(collection = "actors")
 public class Actor {
@@ -18,7 +20,7 @@ public class Actor {
 
 	private String name;
 
-	private String birthDate;
+	private LocalDate birthDate;
 
 	private Gender gender;
 

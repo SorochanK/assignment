@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: Assignment for AposHealth project
+
+server:
+  port: 8080
+
+imdb:
+  base:
+    url: https://www.imdb.com
+  top-actors:
+    url: https://www.imdb.com/list/ls052283250/
